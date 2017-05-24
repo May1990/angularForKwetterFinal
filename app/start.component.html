@@ -1,0 +1,63 @@
+<header>
+    <form id="searchForm">
+        <input id="searchTxt" (keydown.enter)="search()" [(ngModel)]="searchWord"/>
+    </form>
+</header>
+<div id="start">
+    <section id="happening">
+        <h3>What's happening?</h3>
+        <form>
+            <textarea id="newTweet" name="content" (keydown.enter)="newTweet()" [(ngModel)]="content" maxlength="140" class="inputTweet"></textarea>
+        </form>
+
+        <form id="tableForm">
+            <table>
+                <tr *ngFor="#tweet of tweets">
+                    <td><img src={{tweet.owner.pictureUrl}} class="imageUser"></td>
+                    <td><p>
+                        <b>{{tweet.owner.userName}}</b><br/>
+                        <small>{{tweet.timeAgo}}</small>
+                        {{tweet.content}}
+                    </p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <section id="myStartInfo" >
+        <form id="myTweetForm">
+            <h3 id="myTweetTitle">Your tweet's </h3>
+
+            <p id="myTweet">
+                <img id="myTweetImage" class="imageUser" src={{lastTweet?.owner?.pictureUrl}}>
+                <label><small>{{lastTweet?.owner?.userName}}<b>{{lastTweet?.timeAgo}}</b></small></label><br/>
+                <label>{{lastTweet?.content}}</label>
+            </p>
+        </form>
+        <section id="imagesFollowing">
+            <h2>Following</h2>
+            <div class="imagesRepeat" *ngFor="#user of following">
+                    <img src={{user.pictureUrl}} class="imageUser">
+            </div>
+        </section>
+
+        <section id="imagesFollowers">
+            <h2>Followers</h2>
+            <div class="imagesRepeat" *ngFor="#user of follower">
+                <img src={{user.pictureUrl}} class="imageUser">
+            </div>
+        </section>
+
+    </section>
+    <section id="trends">
+        <h3>Trends</h3><br/>
+        <p>
+            #loveIsInTheAir<br/>
+            #bosselbol<br/>
+            #oudProgramma<br/>
+            #m44twerk<br/>
+            #broodjeAap<br/>
+        </p>
+    </section>
+</div>

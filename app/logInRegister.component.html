@@ -1,0 +1,61 @@
+<div id="registerlogin">
+    <section id="logIn">
+        <form>
+            <table>
+                <tr>
+                    <td><label>Username:</label></td>
+                    <td><input type="text" name="username" [(ngModel)] = "username"/></td>
+                </tr>
+                <tr>
+                    <td><label>Password:</label></td>
+                    <td><input type="text" name="password" [(ngModel)] = "password"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button id="inLogBtn" (click)="logIn()">Log in</button></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <section id="register">
+        <form>
+            <table>
+                <tr>
+                    <td><label>Name:</label></td>
+                    <td><input type="text" name="name" [(ngModel)] = "name"/></td>
+                </tr>
+                <tr>
+                    <td><label>Username:</label></td>
+                    <td><input type="text" name="regUsername" [(ngModel)] = "regUsername"/></td>
+                </tr>
+                <tr>
+                    <td><label>Password:</label></td>
+                    <td><input type="text" name="regPassword" [(ngModel)] = "regPassword"/></td>
+                </tr>
+                <tr>
+                    <td><label>Confirm Password:</label></td>
+                    <td><input type="text" name="regPasswordCnfrm" [(ngModel)] = "regPasswordCnfrm"/></td>
+                </tr>
+                <tr>
+                    <td><label>Email:</label></td>
+                    <td><input type="text" name="email" [(ngModel)] = "email"/></td>
+                </tr>
+                <tr>
+                    <td><label>Confirm email:</label></td>
+                    <td><input type="text" name="emailCnfrm" [(ngModel)] = "emailCnfrm"/></td>
+                </tr>
+                <tr>
+                    <td><label>Website:</label></td>
+                    <td><input type="text" name="website" [(ngModel)] = "website"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button>Register</button></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</div>
+
+<router-outlet></router-outlet>

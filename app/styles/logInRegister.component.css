@@ -1,0 +1,31 @@
+#logIn, #register{
+    height: 300px;
+    width: 47%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 1%;
+    padding: 0.5%;
+    border-radius: 15px;
+}
+
+#register{
+    background-color: rgba(247, 85, 38, 0.75);
+}
+
+#logIn{
+    background-color:rgba(246, 223, 176, 0.75);
+}
+
+.regLogLabels{
+    width: 57%;
+}
+
+#registerlogin{
+    height: 300px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}

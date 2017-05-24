@@ -1,0 +1,126 @@
+<app-header></app-header>
+<div id="profile">
+    <section id="basicInfo">
+        <form id="basicInfoForm">
+            <p id="infoBasic">
+                <img src="{{selectedUser?.pictureUrl}}" class="imageUser" />
+                {{selectedUser?.name}}<br/>
+                <b>{{selectedUser?.userName}}</b>
+            </p>
+        </form>
+    </section>
+
+    <section id="profileTweets">
+        <form id="profileTweetForm">
+            <h3 id="profileTweetTitle">Tweet's</h3>
+            <table>
+                <tr *ngFor="#tweet of tweets">
+                    <td><img src={{tweet?.owner?.pictureUrl}} class="imageUser"></td>
+                    <td><p>
+                        {{tweet?.owner.userName}}<br/>
+                        <small>{{tweet?.timeAgo}}</small>
+                        {{tweet?.content}}
+                    </p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    <section id="profileDetails">
+        <h3>Details</h3><br/>
+        <form id="detailForm">
+            <div *ngIf="'noAdjust' == adjust">
+                <table id="detail" class="panelTable" > <!--style="display: none"-->
+                    <tr>
+                        <td><label>Name:</label></td>
+                        <td><label id="name">{{name}}</label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Username:</label></td>
+                        <td><label id="username">{{newUserName}}</label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email:</label></td>
+                        <td><label id="email">{{email}}</label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Web:</label></td>
+                        <td><label id="web">{{web}}</label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Bio:</label></td>
+                        <td><label id="bio">{{bio}}</label></td>
+                    </tr>
+                    <tr *ngIf="usernameTemp == usernameTempLogIn">
+                        <td><button (click)="setAdjust('detailAdjust')">Gegevens bewerken</button></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="'detailAdjust' == adjust">
+                <table id="detailAdjust" class="panelTable" >
+                    <tr>
+                        <td><label>Name:</label></td>
+                        <td><input id="nameAdjust" [(ngModel)]="name"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Email:</label></td>
+                        <td><input id="emailAdjust" [(ngModel)]="email"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Web:</label></td>
+                        <td><input id="webAdjust" [(ngModel)]="web"/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Bio:</label></td>
+                        <td><textarea id="bioAdjust" [(ngModel)]="bio"  style="height: 150px; width: 217.6px;"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label>Upload foto:</label></td>
+                        <td><input id="pictureAdjust" [(ngModel)]="pictureUrl"/></td>
+                    </tr>
+                    <tr>
+                        <td><button (click)="setAdjust('usernameAdjust'); adjustDetails()">Gegevens aanpassen</button></td>
+                        <td><button (click)="setAdjust('noAdjust');">Cancel</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="'usernameAdjust' == adjust">
+                <table id="usernameAdjustPnl" class="panelTable">
+                    <tr>
+                        <td><label>Username:</label></td>
+                        <td><input id="usernameAdjust" [(ngModel)]="newUserName" (keyup)="checkUserNameExist()"/></td>
+                    </tr>
+                    <tr>
+                        <td><label id="userNameExist"  style="color: brown; display: none" >{{userNameExist}}</label></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><button id="btnAdjustUserName" [disabled]="btnDis" (click)="setAdjust('noAdjust'); adjustUserName()" >Gebruikersnaam aanpassen</button></td>
+                        <td><button (click)="setAdjust('noAdjust'); fillUser()">Cancel</button></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </section>
+    <section id="followInfo">
+        <form id="followForm" >
+            <p>
+                <button (click)="fillTweetsFollowing()">{{countFollowing}} following</button>
+                <button (click)="fillTweetsFollowers()">{{countFollower}} follower</button>
+                <button (click)="fillTweets()">{{countOwnTweets}} tweets</button>
+            </p>
+        </form>
+    </section>
+    <section id="profileFollowing" >
+        <form id="followingForm">
+            <div id="followingBlock" *ngFor="#user of following">
+                <div class="imageFollowing">
+                    <!--to do get in center-->
+                    <img src={{user?.pictureUrl}} class="imageUser">
+                </div><br/>
+                <button (click)="setTempUserName($event); fillUser()">{{user?.userName}}</button>
+            </div>
+        </form>
+    </section>
+</div>

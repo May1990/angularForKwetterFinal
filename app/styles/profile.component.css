@@ -1,0 +1,47 @@
+#profile{
+    height: 850px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+#basicInfo, #profileTweets, #profileDetails, #followInfo, #profileFollowing{
+    width: 47%;
+    margin: 10px 1%;
+    padding: 0.5%;
+    border-radius: 15px;
+}
+
+#basicInfo, #profileDetails{
+    background-color:rgba(19, 124, 181, 0.85);
+}
+
+#followInfo, #profileFollowing{
+    background-color:rgba(246, 223, 176, 0.75) ! important;
+}
+
+#profileTweets{
+    background-color: rgba(247, 85, 38, 0.75) ! important;
+    height: 600px;
+    flex-grow: 1;
+}
+
+#profileFollowing{
+    height: 250px;
+}
+
+#infoBasic .imageUser{
+    float: left;
+    margin-right: 5px;
+}
+
+#followingBlock{
+    display: inline-block;
+}
+
+.imageFollowing{
+    margin:auto;
+    display: inline-block;
+}

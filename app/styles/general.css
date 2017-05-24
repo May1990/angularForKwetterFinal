@@ -1,0 +1,54 @@
+@font-face {
+    font-family: greatVibes;
+    src: url("/app/styles/GreatVibesRegular.ttf");
+}
+
+p, label, a{
+    font-size: 11pt;
+}
+
+.timeLineTable, .ui-widget, .tabKwetter, p, label, .ui-widget{
+    font-family: "Trebuchet MS", Helvetica, sans-serif ! important;
+    color: #1c3132 ! important;
+}
+
+a{
+    font-family: "Trebuchet MS", Helvetica, sans-serif ! important;
+    color: #1c3132 ! important;
+}
+
+h1{
+    font-size: 15pt;
+}
+
+h2{
+    font-size: 14pt;
+}
+
+h3{
+    font-size: 22pt;
+}
+
+h1, h2, h3{
+    font-family: greatVibes;
+    color: #1C3132;
+}
+
+header{
+    padding: 1%;
+    width: 98%;
+    background-color:rgba(19, 124, 181, 0.85);
+    border-radius: 15px;
+}
+
+.panelTable tr, .panelTable td{
+    background-color: transparent ! important;
+    border: 0 !important;
+    color: #1C3132 !important;
+}
+
+.imageUser{
+    height: 45px;
+    width: 45px;
+    margin-left: 3px;
+}

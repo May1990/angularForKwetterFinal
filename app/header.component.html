@@ -1,0 +1,18 @@
+<header>
+  <nav>
+    <ul>
+      <li>
+        <p>{{username}}</p>
+        <div>
+          <ul>
+            <li><a [routerLink]="['Start']">Start</a></li>
+            <li><a [routerLink]="['Profile']">Profile</a></li>
+            <li><a [routerLink]="['LogIn']">Uitloggen</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>

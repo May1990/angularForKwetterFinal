@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background-size: 250px;
+  background-image: url("app/images/background.png");
+}
+
+#container{
+  margin: 20px auto 20px auto;
+  width: 900px;
+}
